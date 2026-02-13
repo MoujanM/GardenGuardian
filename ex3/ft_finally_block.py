@@ -1,3 +1,14 @@
+# ************************************************************************* #
+#                                                                           #
+#                                                      :::      ::::::::    #
+#  ft_finally_block.py                               :+:      :+:    :+:    #
+#                                                  +:+ +:+         +:+      #
+#  By: mmirdama <mmirdama@student.42.fr>         +#+  +:+       +#+         #
+#                                              +#+#+#+#+#+   +#+            #
+#  Created: 2026/02/13 16:45:35 by mmirdama        #+#    #+#               #
+#  Updated: 2026/02/13 16:46:09 by mmirdama        ###   ########.fr        #
+#                                                                           #
+# ************************************************************************* #
 
 def water_plants(plant_list: list) -> None:
     print("Opening watering system")
@@ -10,6 +21,7 @@ def water_plants(plant_list: list) -> None:
     finally:
         print("Closing watering system (cleanup)")
 
+
 def test_watering_system():
     clean_plant_list = ["tomato", "lettuce", "carrots"]
     error_plant_list = ["tomato", None, "beans"]
@@ -18,7 +30,7 @@ def test_watering_system():
     print("=== Garden Watering System ===", end='\n\n')
     for test in tests:
         print("Testing normal watering..." if test is clean_plant_list
-                else "Testing with error...")
+              else "Testing with error...")
         try:
             water_plants(test)
         except ValueError as e:
